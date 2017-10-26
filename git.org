@@ -2,6 +2,10 @@
 #+OPTIONS: toc:nil num:nil html-postamble:nil
 #+STARTUP: showall
 
+* Where to start
+  - [[https://git-scm.com/][git home page]]
+  - [[https://git-scm.com/book/en/v2][Pro Git]] book
+  - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
 * Setting a github repository
 * Create a new repository and export to github
   #+BEGIN_SRC

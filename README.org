@@ -7,3 +7,4 @@ A playground for childish games
 * [[file:emacs.org][emacs]]
 * [[file:git.org][git]]
 * [[file:magit.org][magit]]
+* [[file:org-mode.org][org-mode]]

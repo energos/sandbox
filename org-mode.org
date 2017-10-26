@@ -1,0 +1,5 @@
+#+TITLE:   org-mode
+#+OPTIONS: toc:nil num:nil html-postamble:nil
+#+STARTUP: showall
+
+* Org-mode ROCKS!
