@@ -1,0 +1,16 @@
+#+TITLE:   git
+#+OPTIONS: toc:nil num:nil html-postamble:nil
+#+STARTUP: showall
+
+* Setting a github repository
+* Create a new repository and export to github
+  #+BEGIN_SRC
+  echo "#+TITLE: sandbox" > README.org
+  git init
+  git config user.name "energos"
+  git config user.email "energos@users.noreply.github.com"  
+  git remote add origin git@github.com:energos/sandbox.git
+  git add README.org
+  git commit -m "Initial commit"
+  git push -u origin master
+  #+END_SRC

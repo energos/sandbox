@@ -1,0 +1,9 @@
+#+TITLE:   sandbox
+#+OPTIONS: toc:nil num:nil html-postamble:nil
+#+STARTUP: showall
+
+A playground for childish games
+
+* [[file:emacs.org][emacs]]
+* [[file:git.org][git]]
+* [[file:magit.org][magit]]
