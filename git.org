@@ -6,8 +6,9 @@
   - [[https://git-scm.com/][git home page]]
   - [[https://git-scm.com/book/en/v2][Pro Git]] book
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
-* Setting a github repository
-* Create a new repository and export to github
+* Setting a GitHub repository
+  - [[https://help.github.com/][GitHub Help]]
+* Create a new repository and export to GitHub
   #+BEGIN_SRC
   echo "#+TITLE: sandbox" > README.org
   git init
@@ -18,3 +19,23 @@
   git commit -m "Initial commit"
   git push -u origin master
   #+END_SRC
+* Working Tree / Staging Area / Repository
+  #+BEGIN_SRC
+  Working       Staging      .git Local     Remote
+  Tree          Area         Repository     Repository
+    |             |              |             |
+    |--- Stage -->|--- Commit -->|--- Push --->|
+    |                            |             |
+    |<-------- Checkout ---------|       ? <---|
+  #+END_SRC
+* Command line help
+  #+BEGIN_SRC
+  $ git help
+  $ git --help
+  $ git help <verb>
+  $ git <verb> --help
+  $ man git
+  $ man git-<verb>
+  #+END_SRC
+* Unsorted notes
+  - *git stage* is a synonym for *git add*
