@@ -37,5 +37,10 @@
   $ man git
   $ man git-<verb>
   #+END_SRC
+* Differences
+  - *git diff* shows unstaged changes
+  - *git diff --staged* shows staged changes
+  - *--staged* is a synonym of *--cached*
 * Unsorted notes
   - *git stage* is a synonym for *git add*
+  - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
