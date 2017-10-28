@@ -10,14 +10,14 @@
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
   #+BEGIN_SRC
-  echo "#+TITLE: sandbox" > README.org
-  git init
-  git config user.name "energos"
-  git config user.email "energos@users.noreply.github.com"
-  git remote add origin git@github.com:energos/sandbox.git
-  git add README.org
-  git commit -m "Initial commit"
-  git push -u origin master
+  $ echo "#+TITLE: sandbox" > README.org
+  $ git init
+  $ git config user.name "energos"
+  $ git config user.email "energos@users.noreply.github.com"
+  $ git remote add origin git@github.com:energos/sandbox.git
+  $ git add README.org
+  $ git commit -m "Initial commit"
+  $ git push -u origin master
   #+END_SRC
 * Working Tree / Staging Area / Repository
   #+BEGIN_SRC
@@ -36,6 +36,12 @@
   $ git <verb> --help
   $ man git
   $ man git-<verb>
+  #+END_SRC
+* Add
+  - *git stage* is a synonym for *git add*
+  #+BEGIN_SRC
+  $ git add <file>
+  $ git add -A
   #+END_SRC
 * Differences
   - *git diff* shows unstaged changes
@@ -56,5 +62,4 @@
   $ git log --oneline -- foo.txt
   #+END_SRC
 * Unsorted notes
-  - *git stage* is a synonym for *git add*
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
