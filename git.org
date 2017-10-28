@@ -13,7 +13,7 @@
   echo "#+TITLE: sandbox" > README.org
   git init
   git config user.name "energos"
-  git config user.email "energos@users.noreply.github.com"  
+  git config user.email "energos@users.noreply.github.com"
   git remote add origin git@github.com:energos/sandbox.git
   git add README.org
   git commit -m "Initial commit"
@@ -41,6 +41,20 @@
   - *git diff* shows unstaged changes
   - *git diff --staged* shows staged changes
   - *--staged* is a synonym of *--cached*
+* Log
+  #+BEGIN_SRC
+  $ git log
+  $ git log --stat
+  $ git log -p
+  $ git log -1
+  $ git log --pretty=oneline
+  $ git log --pretty=format:"%h: %s - %ar" --graph
+  $ git log --oneline
+  $ git log --oneline --since=6.hours
+  $ git log --oneline -i --grep remove
+  $ git log --oneline -i -Shello
+  $ git log --oneline -- foo.txt
+  #+END_SRC
 * Unsorted notes
   - *git stage* is a synonym for *git add*
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
