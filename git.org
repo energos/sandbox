@@ -49,11 +49,12 @@
    #+BEGIN_SRC
    $ git reset HEAD <file>
    #+END_SRC
-* Discard (unstaged) changes to a file
+* Discard changes to a file
+** Unstaged changes
   #+BEGIN_SRC
   $ git checkout -- <file>
   #+END_SRC
-** Discard staged changes to a file
+** Staged changes
    First, unstage the changes
    #+BEGIN_SRC
    $ git reset HEAD <file>
