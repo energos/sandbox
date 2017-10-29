@@ -5,6 +5,7 @@
 * Where to start
   - [[https://git-scm.com/][git home page]]
   - [[https://git-scm.com/book/en/v2][Pro Git]] book
+  - [[https://try.github.io/][Try Git]]
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
 * Setting a GitHub repository
