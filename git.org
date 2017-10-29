@@ -6,6 +6,7 @@
   - [[https://git-scm.com/][git home page]]
   - [[https://git-scm.com/book/en/v2][Pro Git]] book
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
+  - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
@@ -47,10 +48,19 @@
    #+BEGIN_SRC
    $ git reset HEAD <file>
    #+END_SRC
-* Discard changes to a file
+* Discard (unstaged) changes to a file
   #+BEGIN_SRC
   $ git checkout -- <file>
   #+END_SRC
+** Discard staged changes to a file
+   First, unstage the changes
+   #+BEGIN_SRC
+   $ git reset HEAD <file>
+   #+END_SRC
+   then, discard the changes
+   #+BEGIN_SRC
+   $ git checkout -- <file>
+   #+END_SRC
 * Diff
   - *git diff* shows unstaged changes
   - *git diff --staged* shows staged changes
