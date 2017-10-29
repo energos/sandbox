@@ -47,6 +47,10 @@
    #+BEGIN_SRC
    $ git reset HEAD <file>
    #+END_SRC
+* Discard changes to a file
+  #+BEGIN_SRC
+  $ git checkout -- <file>
+  #+END_SRC
 * Diff
   - *git diff* shows unstaged changes
   - *git diff --staged* shows staged changes
