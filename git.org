@@ -81,5 +81,22 @@
   $ git log --oneline -i -Shello
   $ git log --oneline -- foo.txt
   #+END_SRC
+* Remotes
+  #+BEGIN_SRC
+  $ git remote add origin git@github.com:energos/sandbox.git
+  $ git remote -v
+  $ git remote show origin
+  #+END_SRC
+** Fetch and Pull
+   - *git pull* = *git fetch* + *git merge*
+   #+BEGIN_SRC
+   $ git fetch <remote>
+   $ git fetch origin
+   #+END_SRC
+** Push
+   #+BEGIN_SRC
+   $ git push <remote> <branch>
+   $ git push origin master
+   #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
