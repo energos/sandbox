@@ -98,5 +98,10 @@
    $ git push <remote> <branch>
    $ git push origin master
    #+END_SRC
+** Rename and Remove
+  #+BEGIN_SRC
+  $ git remote rename <remote-name> <remote-new-name>
+  $ git remote rm <remote-name>
+  #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
