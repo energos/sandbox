@@ -103,5 +103,18 @@
   $ git remote rename <remote-name> <remote-new-name>
   $ git remote rm <remote-name>
   #+END_SRC
+* Tags
+  #+BEGIN_SRC
+  $ git tag                                     # list tags
+  $ git tag -l                                  # list tags
+  $ git tag -l <pattern>                        # list tags matching <pattern>
+  $ git tag <tagname>                           # create a lightweight tag
+  $ git tag -a <tagname>                        # create an annotated tag
+  $ git tag -a <tagname> -m "annotation"        # create an annotated tag
+  $ git tag -d <tagname>                        # delete tag
+  $ git tag <tagname> <commit>                  # tag a specific commit
+  $ git push <remote> <tagname>                 # push tag to remote server
+  $ git push <remote> --tags                    # push all tags to remote server
+  #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
