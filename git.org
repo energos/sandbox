@@ -22,14 +22,14 @@
   $ git push -u origin master
   #+END_SRC
 * Working Tree / Staging Area / Repository
-  #+BEGIN_SRC
+  #+BEGIN_EXAMPLE
   Working       Staging      .git Local     Remote
   Tree          Area         Repository     Repository
     |             |              |             |
     |--- Stage -->|--- Commit -->|--- Push --->|
     |                            |             |
     |<-------- Checkout ---------|       ? <---|
-  #+END_SRC
+  #+END_EXAMPLE
 * Command line help
   #+BEGIN_SRC sh
   $ git help
