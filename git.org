@@ -11,7 +11,7 @@
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ echo "#+TITLE: sandbox" > README.org
   $ git init
   $ git config user.name "energos"
@@ -31,7 +31,7 @@
     |<-------- Checkout ---------|       ? <---|
   #+END_SRC
 * Command line help
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git help
   $ git --help
   $ git help <verb>
@@ -41,26 +41,26 @@
   #+END_SRC
 * Add
   - *git stage* is a synonym for *git add*
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git add <file>
   $ git add -A
   #+END_SRC
 ** Undo an Add (Unstage)
-   #+BEGIN_SRC
+   #+BEGIN_SRC sh
    $ git reset HEAD <file>
    #+END_SRC
 * Discard changes to a file
 ** Unstaged changes
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git checkout -- <file>
   #+END_SRC
 ** Staged changes
    First, unstage the changes
-   #+BEGIN_SRC
+   #+BEGIN_SRC sh
    $ git reset HEAD <file>
    #+END_SRC
    then, discard the changes
-   #+BEGIN_SRC
+   #+BEGIN_SRC sh
    $ git checkout -- <file>
    #+END_SRC
 * Diff
@@ -68,7 +68,7 @@
   - *git diff --staged* shows staged changes
   - *--staged* is a synonym of *--cached*
 * Log
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git log
   $ git log --stat
   $ git log -p
@@ -82,29 +82,29 @@
   $ git log --oneline -- foo.txt
   #+END_SRC
 * Remotes
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git remote add origin git@github.com:energos/sandbox.git
   $ git remote -v
   $ git remote show origin
   #+END_SRC
 ** Fetch and Pull
    - *git pull* = *git fetch* + *git merge*
-   #+BEGIN_SRC
+   #+BEGIN_SRC sh
    $ git fetch <remote>
    $ git fetch origin
    #+END_SRC
 ** Push
-   #+BEGIN_SRC
+   #+BEGIN_SRC sh
    $ git push <remote> <branch>
    $ git push origin master
    #+END_SRC
 ** Rename and Remove
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git remote rename <remote-name> <remote-new-name>
   $ git remote rm <remote-name>
   #+END_SRC
 * Tags
-  #+BEGIN_SRC
+  #+BEGIN_SRC sh
   $ git tag                                     # list tags
   $ git tag -l                                  # list tags
   $ git tag -l <pattern>                        # list tags matching <pattern>
