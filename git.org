@@ -116,5 +116,10 @@
   $ git push <remote> <tagname>                 # push tag to remote server
   $ git push <remote> --tags                    # push all tags to remote server
   #+END_SRC
+* Aliases
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro+Git - Git Aliases]]
+  #+BEGIN_SRC sh
+  $ git config alias.last 'log -1 HEAD'
+  #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
