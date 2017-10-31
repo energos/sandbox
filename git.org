@@ -11,6 +11,7 @@
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository][Pro Git - Getting a Git Repository]]
   #+BEGIN_SRC sh
   $ echo "#+TITLE: sandbox" > README.org
   $ git init
@@ -22,6 +23,7 @@
   $ git push -u origin master
   #+END_SRC
 * Working Tree / Staging Area / Repository
+  - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
   #+BEGIN_EXAMPLE
   Working       Staging      .git Local     Remote
   Tree          Area         Repository     Repository
@@ -31,6 +33,7 @@
     |<-------- Checkout ---------|       ? <---|
   #+END_EXAMPLE
 * Command line help
+  - [[https://git-scm.com/book/en/v2/Getting-Started-Getting-Help][Pro Git - Getting Help]]
   #+BEGIN_SRC sh
   $ git help
   $ git --help
@@ -40,6 +43,7 @@
   $ man git-<verb>
   #+END_SRC
 * Add
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository][Pro Git - Recording Changes to the Repository]]
   - *git stage* is a synonym for *git add*
   #+BEGIN_SRC sh
   $ git add <file>
@@ -50,6 +54,7 @@
    $ git reset HEAD <file>
    #+END_SRC
 * Discard changes to a file
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things][Pro Git - Undoing Things]]
 ** Unstaged changes
   #+BEGIN_SRC sh
   $ git checkout -- <file>
@@ -68,6 +73,7 @@
   - *git diff --staged* shows staged changes
   - *--staged* is a synonym of *--cached*
 * Log
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History][Pro Git - Viewing the Commit History]]
   #+BEGIN_SRC sh
   $ git log
   $ git log --stat
@@ -82,6 +88,7 @@
   $ git log --oneline -- foo.txt
   #+END_SRC
 * Remotes
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
   #+BEGIN_SRC sh
   $ git remote add origin git@github.com:energos/sandbox.git
   $ git remote -v
@@ -104,6 +111,7 @@
   $ git remote rm <remote-name>
   #+END_SRC
 * Tags
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Tagging][Pro Git - Tagging]]
   #+BEGIN_SRC sh
   $ git tag                                     # list tags
   $ git tag -l                                  # list tags
@@ -117,7 +125,7 @@
   $ git push <remote> --tags                    # push all tags to remote server
   #+END_SRC
 * Aliases
-  - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro+Git - Git Aliases]]
+  - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro Git - Git Aliases]]
   #+BEGIN_SRC sh
   $ git config alias.last 'log -1 HEAD'
   #+END_SRC
