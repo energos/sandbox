@@ -129,5 +129,7 @@
   #+BEGIN_SRC sh
   $ git config alias.last 'log -1 HEAD'
   #+END_SRC
+* Branches
+  - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
