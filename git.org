@@ -8,6 +8,7 @@
   - [[https://try.github.io/][Try Git]]
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
+* Installing git
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
