@@ -133,6 +133,8 @@
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
   - Created a "testing" branch. Added some stuff to it.
   - Now back to "master" branch. Do some editing and then commit:
-    : $ git commit -a -m 'Back to "master" again' 
+    : $ git commit -a -m 'Back to "master" again'
+  - To get a nice log of all branches:
+    : $ git log --oneline --all --graph
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
