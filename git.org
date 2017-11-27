@@ -131,5 +131,11 @@
   #+END_SRC
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
+  - Create new branch
+    : $ git branch testing
+  - Switch to the new (or other existing) branch
+    : $ git checkout testing
+  - Edit some stuff and do a commit in the brand new branch
+    : $ git -a commit -m 'My brand new "testing" branch'
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
