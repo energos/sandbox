@@ -135,7 +135,21 @@
     : $ git branch testing
   - Switch to the new (or other existing) branch
     : $ git checkout testing
+  - Create new branch and switch to it in one command
+    This is equivalent to the 2 previous commands
+    : $ git checkout -b testing
   - Edit some stuff and do a commit in the brand new branch
-    : $ git -a commit -m 'My brand new "testing" branch'
+    : $ git commit -a -m 'My brand new "testing" branch'
+  - Switch back to master branch
+    : git checkout master
+    Cool! You will be warned if your tree is 'dirty':
+    #+BEGIN_EXAMPLE
+    error: Your local changes to the following files would be overwritten by checkout:
+	git.org
+    Please commit your changes or stash them before you switch branches.
+    Aborting
+    #+END_EXAMPLE
+  - So, let's commit it in "testing" before branching back to "master"
+    : $ git commit -a -m 'Add more stuff in "testing" branch'
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
