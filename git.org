@@ -9,6 +9,11 @@
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
 * Installing git
+  - [[https://git-scm.com/downloads][Git - Downloads]]
+  - With your favorite package manager
+    : # emerge --ask --verbose dev-vcs/git
+  - [[https://www.cygwin.com/][Cygwin]] - get git and the whole enchilada
+  - chocolatey, bash on windows, etc.
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
