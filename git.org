@@ -147,6 +147,7 @@
     : $ git checkout -b testing
   - Edit some stuff and do a commit in the brand new branch
     : $ git commit -a -m 'My brand new "testing" branch'
+  - Edit some stuff without commiting
   - Switch back to master branch
     : git checkout master
     Cool! You will be warned if your tree is 'dirty':
