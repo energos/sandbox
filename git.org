@@ -6,9 +6,13 @@
 * Where to start
   - [[https://git-scm.com/][git home page]]
   - [[https://git-scm.com/book/en/v2][Pro Git]] book
-  - [[https://try.github.io/][Try Git]]
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
+  - [[https://try.github.io/][Try Git]]
+* Tutorials
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
+  - [[https://www.youtube.com/playlist?list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial - YouTube]]
+  - [[https://www.youtube.com/playlist?list=PL_m-qmrTyRPxR01vXMeUuok4q1MgZvUZv][git commands - YouTube]]
+  - [[https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx][Git Tutorials - YouTube]]
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
