@@ -160,8 +160,14 @@
     : $ git commit -a -m 'Add more stuff in "testing" branch'
   - Created a "testing" branch. Added some stuff to it.
   - Now back to "master" branch. Do some editing and then commit:
+    : $ git checkout master
+    edit some stuff
     : $ git commit -a -m 'Back to "master" again'
   - To get a nice log of all branches:
     : $ git log --oneline --all --graph
+  - Merge time baby
+    : $ git merge testing
+  - Delete old branch (optional)
+    : $ git branch -d testing
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
