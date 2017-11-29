@@ -11,6 +11,8 @@
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
 * Tutorials
   - force a merge conflict
+  - a no-sense change here
+  - and here
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
@@ -172,5 +174,8 @@
     : $ git merge testing
   - Delete old branch (optional)
     : $ git branch -d testing
+* Use meld as a diff tool
+  : $ git config diff.tool meld
+  : $ git config difftool.prompt false
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
