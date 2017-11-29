@@ -181,5 +181,6 @@
 * Use meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
+* Force conflict :-)
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
