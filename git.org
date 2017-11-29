@@ -19,6 +19,10 @@
     : # emerge --ask --verbose dev-vcs/git
   - [[https://www.cygwin.com/][Cygwin]] - get git and the whole enchilada
   - chocolatey, bash on windows, etc.
+* Magit
+  Oh, yeah, Magit ROCKS!
+  - [[https://magit.vc/][It's Magit! A Git Porcelain inside Emacs]]
+  - [[file:magit.org][Magit]]
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
