@@ -9,6 +9,8 @@
   - [[https://try.github.io/][Try Git]]
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
+* Tutorials
+  - force a merge conflict
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
