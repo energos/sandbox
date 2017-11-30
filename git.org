@@ -178,9 +178,13 @@
     : $ git merge testing
   - Delete old branch (optional)
     : $ git branch -d testing
-* Use meld as a diff tool
+* Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
-* Force conflict :-)
+* Using meld as a merge tool
+  - [[http://meldmerge.org/help/resolving-conflicts.html][Meld - Resolving merge conflicts]]
+  - [[https://www.youtube.com/watch?v=3Qynj8WUwgs&index=9&t=213s&list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial 9: Diff and Merge using meld]]
+  : $ git config merge.tool meld
+  : $ git config mergetool.keepBackup false
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
