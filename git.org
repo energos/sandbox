@@ -178,6 +178,11 @@
     : $ git merge testing
   - Delete old branch (optional)
     : $ git branch -d testing
+  - List current branches
+    : $ git branch
+    : $ git branch -v
+    : $ git branch --merged
+    : $ git branch --no-merged
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
