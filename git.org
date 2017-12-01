@@ -202,3 +202,7 @@
   : $ git config mergetool.keepBackup false
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
+* Git hosting servers
+** GitHub
+** GitLab
+** Self hosted
