@@ -194,6 +194,8 @@
     : $ git ls-remote
   - Tracking branches
     : $ git branch -vv
+  - How to mark a branch as a tracking branch?
+    ???
 * Multiple remote servers
   : $ git remote add  git@gitlab.com:nononono/sandbox.git
 * Using meld as a diff tool
