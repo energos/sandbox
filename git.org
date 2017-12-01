@@ -192,6 +192,8 @@
     : $ git remote -v
     : $ git remote show origin
     : $ git ls-remote
+* Multiple remote servers
+  : $ git remote add  git@gitlab.com:nononono/sandbox.git
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
