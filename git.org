@@ -40,12 +40,16 @@
 * Working Tree / Staging Area / Repository
   - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
   #+BEGIN_EXAMPLE
-  Working       Staging      .git Local     Remote
-  Tree          Area         Repository     Repository
-    |             |              |             |
-    |--- Stage -->|--- Commit -->|--- Push --->|
-    |                            |             |
-    |<-------- Checkout ---------|       ? <---|
+  Working       Staging      .git Local       Remote
+  Tree          Area         Repository       Repository
+    |             |              |               |
+    |--- Stage -->|--- Commit -->|------ Push -->|
+    |                            |               |
+    |<-------- Checkout ---------|<----- Fetch --|
+    |                            |               |
+    |<--------- Merge -----------|<-+<-- Pull ---|
+    |                               |
+    |<------------------------------+
   #+END_EXAMPLE
 * Command line help
   - [[https://git-scm.com/book/en/v2/Getting-Started-Getting-Help][Pro Git - Getting Help]]
@@ -108,6 +112,7 @@
   $ git remote add origin git@github.com:energos/sandbox.git
   $ git remote -v
   $ git remote show origin
+  $ git ls-remote
   #+END_SRC
 ** Fetch and Pull
    - *git pull* = *git fetch* + *git merge*
@@ -183,6 +188,10 @@
     : $ git branch -v
     : $ git branch --merged
     : $ git branch --no-merged
+  - Remote branches
+    : $ git remote -v
+    : $ git remote show origin
+    : $ git ls-remote
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
