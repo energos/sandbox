@@ -211,7 +211,8 @@
      private 3912216 Start a private branch
    * public  eebb246 Pushing a private branch
    #+END_EXAMPLE
-   The branch was pushed but it is still not a tracking branch.
+   The branch was pushed but it is still not a tracking branch. It still needs
+   to be explicitly pushed.
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
