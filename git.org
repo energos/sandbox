@@ -195,7 +195,19 @@
   - Tracking branches
     : $ git branch -vv
   - How to mark a branch as a tracking branch?
-    ???
+    #+BEGIN_EXAMPLE
+     $ git branch -vv
+      master  0dbd592 [origin/master] Tracking branches
+      private 3912216 Start a private branch
+    * public  eebb246 Pushing a private branch
+    #+END_EXAMPLE
+    : $ git branch -u origin/public public
+    #+BEGIN_EXAMPLE
+    $ git branch -vv
+    * master  137285a [origin/master] How to define a tracking branch?
+      private 3912216 Start a private branch
+      public  e3c9338 [origin/public: ahead 2] Pushing a public branch
+    #+END_EXAMPLE
 * Multiple remote servers
   : $ git remote add  git@gitlab.com:nononono/sandbox.git
 * Using meld as a diff tool
