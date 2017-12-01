@@ -203,6 +203,9 @@
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
 * Git hosting servers
-** GitHub
-** GitLab
-** Self hosted
+  - [[https://github.com/][GitHub]]
+  - [[https://gitlab.com/][GitLab]]
+  - [[https://bitbucket.org/][Bitbucket]]
+  - [[https://gitea.io/en-US/][Gitea]]
+  - [[https://gogs.io/][Gogs]]
+  - Self hosted
