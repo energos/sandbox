@@ -40,16 +40,16 @@
 * Working Tree / Staging Area / Repository
   - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
   #+BEGIN_EXAMPLE
-  Working       Staging      .git Local       Remote
-  Tree          Area         Repository       Repository
-    |             |              |               |
-    |--- Stage -->|--- Commit -->|------ Push -->|
-    |                            |               |
-    |<-------- Checkout ---------|<----- Fetch --|
-    |                            |               |
-    |<--------- Merge -----------|<-+<-- Pull ---|
-    |                               |
-    |<------------------------------+
+  Working       Staging      .git Local         Remote
+  Tree          Area         Repository         Repository
+    |             |              |                  |
+    |--- Stage -->|--- Commit -->|-------- Push --->|
+    |                            |                  |
+    |<-------- Checkout ---------|<------- Fetch ---|
+    |                            |                  |
+    |<--------- Merge -----------|<-                |
+    |                               \               |
+    |<-------------------------------+-<-- Pull ----|
   #+END_EXAMPLE
 * Command line help
   - [[https://git-scm.com/book/en/v2/Getting-Started-Getting-Help][Pro Git - Getting Help]]
