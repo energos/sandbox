@@ -205,6 +205,13 @@
    * public  a186c58 Start a public branch
    #+END_EXAMPLE
    Let's edit a bit more, commit it and push it, to see what will happen.
+   #+BEGIN_EXAMPLE
+    $ git branch -vv
+     master  0dbd592 [origin/master] Tracking branches
+     private 3912216 Start a private branch
+   * public  eebb246 Pushing a private branch
+   #+END_EXAMPLE
+   The branch was pushed but it is still not a tracking branch.
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
