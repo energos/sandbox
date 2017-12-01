@@ -192,6 +192,11 @@
     : $ git remote -v
     : $ git remote show origin
     : $ git ls-remote
+** Public branches
+   Branches are not automatically pushed. You have to explicitly push the branch
+   you want to share.
+   If you push the branch, it will be a public branch.
+   Yada yada yada, this is public talk. Enjoy the show.
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
