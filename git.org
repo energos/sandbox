@@ -210,6 +210,13 @@
     #+END_EXAMPLE
 * Multiple remote servers
   : $ git remote add  git@gitlab.com:nononono/sandbox.git
+* Git hosting servers
+  - [[https://github.com/][GitHub]]
+  - [[https://gitlab.com/][GitLab]]
+  - [[https://bitbucket.org/][Bitbucket]]
+  - [[https://gitea.io/en-US/][Gitea]]
+  - [[https://gogs.io/][Gogs]]
+  - Self hosted
 * Using meld as a diff tool
   : $ git config diff.tool meld
   : $ git config difftool.prompt false
