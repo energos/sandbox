@@ -194,6 +194,8 @@
     : $ git ls-remote
   - Tracking branches
     : $ git branch -vv
+  - Delete a remote branch
+    : $ git push remote_name --delete branch_name
   - Public branches
     Branches are not automatically pushed. You have to explicitly push the branch
     you want to share.
