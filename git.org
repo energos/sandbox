@@ -194,6 +194,28 @@
     : $ git ls-remote
   - Tracking branches
     : $ git branch -vv
+  - Public branches
+    Branches are not automatically pushed. You have to explicitly push the branch
+    you want to share.
+    If you push the branch, it will be a public branch.
+    Yada yada yada, this is public talk. Enjoy the show.
+    For now this branch is still private.
+    #+BEGIN_EXAMPLE
+    $ git branch -vv
+      master  0dbd592 [origin/master] Tracking branches
+      private 3912216 Start a private branch
+    * public  a186c58 Start a public branch
+    #+END_EXAMPLE
+    Let's edit a bit more, commit it and push it, to see what will happen.
+    #+BEGIN_EXAMPLE
+     $ git branch -vv
+      master  0dbd592 [origin/master] Tracking branches
+      private 3912216 Start a private branch
+    * public  eebb246 Pushing a private branch
+    #+END_EXAMPLE
+    The branch was pushed but it is still not a tracking branch.
+    All branches needs to be explicitly pushed. There is a git config somewhere
+    that allows automatic pushing of tracking branches.
   - How to mark a branch as a tracking branch?
     #+BEGIN_EXAMPLE
      $ git branch -vv
