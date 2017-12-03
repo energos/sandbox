@@ -173,7 +173,7 @@
     #+END_SRC
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
-  - Create new branch
+  - Create new branch, named 'testing' in this example
     #+BEGIN_SRC sh
     git branch testing
     #+END_SRC
@@ -202,7 +202,6 @@
     Please commit your changes or stash them before you switch branches.
     Aborting
     #+END_EXAMPLE
-
   - So, let's commit it in "testing" before branching back to "master"
     #+BEGIN_SRC sh
     git commit -a -m 'Add more stuff in "testing" branch'
@@ -247,7 +246,7 @@
     #+END_SRC
   - Delete a remote branch
     #+BEGIN_SRC sh
-    git push $remote --delete branch_name
+    git push $remote --delete $branch
     #+END_SRC
   - Rename a branch
     #+BEGIN_SRC sh
