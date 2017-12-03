@@ -20,7 +20,6 @@
     #+BEGIN_SRC sh
     emerge --ask --verbose dev-vcs/git          # as root user
     #+END_SRC
-
   - [[https://www.cygwin.com/][Cygwin]] - get git and the whole enchilada
   - chocolatey, msys2, bash on windows, etc.
 * Magit
@@ -43,7 +42,6 @@
     git commit -m "Initial commit"
     git push -u origin master
     #+END_SRC
-
 * Working Tree / Staging Area / Repository
   - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
   - Data flow
@@ -71,7 +69,6 @@
     man git
     man git-$verb
     #+END_SRC
-
 * Add
   - [[https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository][Pro Git - Recording Changes to the Repository]]
   - Adding (staging) files
@@ -80,30 +77,25 @@
     git add -A                          # stage all files
     git stage $file                     # 'git stage' is a synonym for 'git add'
     #+END_SRC
-
   - Undo an Add (Unstage)
     #+BEGIN_SRC sh
     git reset HEAD $file
     #+END_SRC
-
 * Discard changes to a file
   - [[https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things][Pro Git - Undoing Things]]
   - Unstaged changes
     #+BEGIN_SRC sh
     git checkout -- $file
     #+END_SRC
-
   - Staged changes
     First, unstage the changes
     #+BEGIN_SRC sh
     git reset HEAD $file
     #+END_SRC
-
     then, discard the changes
     #+BEGIN_SRC sh
     git checkout -- $file
     #+END_SRC
-
 * Diff
   - Unstaged changes
     #+BEGIN_SRC sh
@@ -114,7 +106,6 @@
     git diff --staged
     git diff --cached                   # '--staged' is a synonym of '--cached'
     #+END_SRC
-
 * Log
   - [[https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History][Pro Git - Viewing the Commit History]]
   - Git log
@@ -132,40 +123,34 @@
     git log --oneline -- foo.txt
     git log --oneline --all --graph
     #+END_SRC
-
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
   - Add remote
     #+BEGIN_SRC sh
     git remote add origin git@github.com:energos/sandbox.git
     #+END_SRC
-
   - Show remotes
     #+BEGIN_SRC sh
     git remote -v
     git remote show origin
     git ls-remote
     #+END_SRC
-
   - Fetch and Pull
     #+BEGIN_SRC sh
     git fetch $remote
     git fetch origin
     git pull origin                     # 'git pull' = 'git fetch' + 'git merge'
     #+END_SRC
-
   - Push
     #+BEGIN_SRC sh
     git push $remote $branch
     git push origin master
     #+END_SRC
-
   - Rename and Remove
     #+BEGIN_SRC sh
     git remote rename $remote-name $remote-new-name
     git remote rm $remote-name
     #+END_SRC
-
 * Tags
   - [[https://git-scm.com/book/en/v2/Git-Basics-Tagging][Pro Git - Tagging]]
   - Examples
@@ -181,42 +166,35 @@
     git push $remote $tagname               # push tag to remote server
     git push $remote --tags                 # push all tags to remote server
     #+END_SRC
-
 * Aliases
   - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro Git - Git Aliases]]
     #+BEGIN_SRC sh
     git config alias.last 'log -1 HEAD'
     #+END_SRC
-
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
   - Create new branch
     #+BEGIN_SRC sh
     git branch testing
     #+END_SRC
-
   - Switch to the new (or other existing) branch
     #+BEGIN_SRC sh
     git checkout testing
     #+END_SRC
-
   - Create new branch and switch to it in one command
     This is equivalent to the 2 previous commands
     #+BEGIN_SRC sh
     git checkout -b testing
     #+END_SRC
-
   - Edit some stuff and do a commit in the brand new branch
     #+BEGIN_SRC sh
     git commit -a -m 'My brand new "testing" branch'
     #+END_SRC
-
   - Edit some stuff without commiting
   - Switch back to master branch
     #+BEGIN_SRC sh
     git checkout master
     #+END_SRC
-
     Cool! You will be warned if your tree is 'dirty':
     #+BEGIN_EXAMPLE
     error: Your local changes to the following files would be overwritten by checkout:
@@ -229,33 +207,27 @@
     #+BEGIN_SRC sh
     git commit -a -m 'Add more stuff in "testing" branch'
     #+END_SRC
-
   - Created a "testing" branch. Added some stuff to it.
   - Now back to "master" branch. Do some editing and then commit:
     #+BEGIN_SRC sh
     git checkout master
     #+END_SRC
-
     edit some stuff
     #+BEGIN_SRC sh
     git commit -a -m 'Back to "master" again'
     #+END_SRC
-
   - To get a nice log of all branches:
     #+BEGIN_SRC sh
     git log --oneline --all --graph
     #+END_SRC
-
   - Merge time baby
     #+BEGIN_SRC sh
     git merge testing
     #+END_SRC
-
   - Delete old branch (optional)
     #+BEGIN_SRC sh
     git branch -d testing
     #+END_SRC
-
   - List current branches
     #+BEGIN_SRC sh
     git branch
@@ -263,24 +235,30 @@
     git branch --merged
     git branch --no-merged
     #+END_SRC
-
   - Remote branches
     #+BEGIN_SRC sh
     git remote -v
     git remote show origin
     git ls-remote
     #+END_SRC
-
   - Tracking branches
     #+BEGIN_SRC sh
     git branch -vv
     #+END_SRC
-
   - Delete a remote branch
     #+BEGIN_SRC sh
-    git push remote_name --delete branch_name
+    git push $remote --delete branch_name
     #+END_SRC
-
+  - Rename a branch
+    #+BEGIN_SRC sh
+    git branch -m $old_name $new_name
+    #+END_SRC
+  - Rename a remote branch
+    #+BEGIN_SRC sh
+    git branch -m $old_name $new_name
+    git push $remote --delete $old_name
+    git push $remote $new_name
+    #+END_SRC
   - Public branches
     Branches are not automatically pushed. You have to explicitly push the branch
     you want to share.
@@ -293,7 +271,6 @@
       private 3912216 Start a private branch
     * public  a186c58 Start a public branch
     #+END_EXAMPLE
-
     Let's edit a bit more, commit it and push it, to see what will happen.
     #+BEGIN_EXAMPLE
     $ git branch -vv
@@ -301,7 +278,6 @@
       private 3912216 Start a private branch
     * public  eebb246 Pushing a private branch
     #+END_EXAMPLE
-
     The branch was pushed but it is still not a tracking branch.
     All branches needs to be explicitly pushed. There is a git config somewhere
     that allows automatic pushing of tracking branches.
@@ -312,23 +288,19 @@
       private 3912216 Start a private branch
     * public  eebb246 Pushing a private branch
     #+END_EXAMPLE
-
     #+BEGIN_SRC sh
     git branch -u origin/public public
     #+END_SRC
-
     #+BEGIN_EXAMPLE
     $ git branch -vv
     * master  137285a [origin/master] How to define a tracking branch?
       private 3912216 Start a private branch
       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
     #+END_EXAMPLE
-
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add  git@gitlab.com:nononono/sandbox.git
   #+END_SRC
-
 * Git hosting servers
   - [[https://github.com/][GitHub]]
   - [[https://gitlab.com/][GitLab]]
@@ -341,7 +313,6 @@
   git config diff.tool meld
   git config difftool.prompt false
   #+END_SRC
-
 * Using meld as a merge tool
   - [[http://meldmerge.org/help/resolving-conflicts.html][Meld - Resolving merge conflicts]]
   - [[https://www.youtube.com/watch?v=3Qynj8WUwgs&index=9&t=213s&list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial 9: Diff and Merge using meld]]
@@ -349,6 +320,5 @@
   git config merge.tool meld
   git config mergetool.keepBackup false
   #+END_SRC
-
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
