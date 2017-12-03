@@ -5,6 +5,7 @@
 
 * Where to start
   - [[https://git-scm.com/][git home page]]
+  - [[https://www.quora.com/What-is-git-and-why-should-I-use-it][What is git and why should I use it? - Quora]]
   - [[https://git-scm.com/book/en/v2][Pro Git]] book
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
 * Tutorials
@@ -16,7 +17,9 @@
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
-    : # emerge --ask --verbose dev-vcs/git
+    #+BEGIN_SRC sh
+    # emerge --ask --verbose dev-vcs/git
+    #+END_SRC
   - [[https://www.cygwin.com/][Cygwin]] - get git and the whole enchilada
   - chocolatey, msys2, bash on windows, etc.
 * Magit
@@ -27,175 +30,224 @@
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
   - [[https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository][Pro Git - Getting a Git Repository]]
-  #+BEGIN_SRC sh
-  $ echo "#+TITLE: sandbox" > README.org
-  $ git init
-  $ git config user.name "energos"
-  $ git config user.email "energos@users.noreply.github.com"
-  $ git remote add origin git@github.com:energos/sandbox.git
-  $ git add README.org
-  $ git commit -m "Initial commit"
-  $ git push -u origin master
-  #+END_SRC
+  - Initialize a git repository
+    #+BEGIN_SRC sh
+    cd ~/your/working/tree/location
+    echo "#+TITLE: sandbox" > README.org
+    git init
+    git config user.name "energos"
+    git config user.email "energos@users.noreply.github.com"
+    git remote add origin git@github.com:energos/sandbox.git
+    git add README.org
+    git commit -m "Initial commit"
+    git push -u origin master
+    #+END_SRC
 * Working Tree / Staging Area / Repository
   - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
-  #+BEGIN_EXAMPLE
-  Working       Staging      .git Local         Remote
-  Tree          Area         Repository         Repository
-    |             |              |                  |
-    |--- Stage -->|--- Commit -->|-------- Push --->|
-    |                            |                  |
-    |<-------- Checkout ---------|<------- Fetch ---|
-    |                            |                  |
-    |<--------- Merge -----------|<-                |
-    |                               \               |
-    |<-------------------------------+-<-- Pull ----|
-  #+END_EXAMPLE
+  - Data flow
+    #+BEGIN_EXAMPLE
+    Working       Staging      .git Local         Remote
+    Tree          Area         Repository         Repository
+      |             |              |                  |
+      |--- Stage -->|--- Commit -->|-------- Push --->|
+      |                            |                  |
+      |<-------- Checkout ---------|<------- Fetch ---|
+      |                            |                  |
+      |<--------- Merge -----------|<-                |
+      |                               \               |
+      |<-------------------------------+-<-- Pull ----|
+    #+END_EXAMPLE
 * Command line help
   - [[https://git-scm.com/book/en/v2/Getting-Started-Getting-Help][Pro Git - Getting Help]]
-  #+BEGIN_SRC sh
-  $ git help
-  $ git --help
-  $ git help <verb>
-  $ git <verb> --help
-  $ man git
-  $ man git-<verb>
-  #+END_SRC
+  - Git help
+    #+BEGIN_SRC sh
+    git help
+    git --help
+    git help $verb
+    git $verb --help
+    man git
+    man git-$verb
+    #+END_SRC
 * Add
   - [[https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository][Pro Git - Recording Changes to the Repository]]
   - *git stage* is a synonym for *git add*
-  #+BEGIN_SRC sh
-  $ git add <file>
-  $ git add -A
-  #+END_SRC
-** Undo an Add (Unstage)
-   #+BEGIN_SRC sh
-   $ git reset HEAD <file>
-   #+END_SRC
+  - Adding (staging) files
+    #+BEGIN_SRC sh
+    git add $file  # stage file $file
+    git add -A     # stage all files
+    #+END_SRC
+  - Undo an Add (Unstage)
+    #+BEGIN_SRC sh
+    git reset HEAD $file
+    #+END_SRC
 * Discard changes to a file
   - [[https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things][Pro Git - Undoing Things]]
-** Unstaged changes
-  #+BEGIN_SRC sh
-  $ git checkout -- <file>
-  #+END_SRC
-** Staged changes
-   First, unstage the changes
-   #+BEGIN_SRC sh
-   $ git reset HEAD <file>
-   #+END_SRC
-   then, discard the changes
-   #+BEGIN_SRC sh
-   $ git checkout -- <file>
-   #+END_SRC
+  - Unstaged changes
+    #+BEGIN_SRC sh
+    git checkout -- $file
+    #+END_SRC
+  - Staged changes
+    First, unstage the changes
+    #+BEGIN_SRC sh
+    git reset HEAD $file
+    #+END_SRC
+    then, discard the changes
+    #+BEGIN_SRC sh
+    git checkout -- $file
+    #+END_SRC
 * Diff
-  - *git diff* shows unstaged changes
-  - *git diff --staged* shows staged changes
+  - Unstaged changes
+    #+BEGIN_SRC sh
+    git diff
+    #+END_SRC
+  - Staged changes
+    #+BEGIN_SRC sh
+    git diff --staged
+    git diff --cached
+    #+END_SRC
   - *--staged* is a synonym of *--cached*
 * Log
   - [[https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History][Pro Git - Viewing the Commit History]]
-  #+BEGIN_SRC sh
-  $ git log
-  $ git log --stat
-  $ git log -p
-  $ git log -1
-  $ git log --pretty=oneline
-  $ git log --pretty=format:"%h: %s - %ar" --graph
-  $ git log --oneline
-  $ git log --oneline --since=6.hours
-  $ git log --oneline -i --grep remove
-  $ git log --oneline -i -Shello
-  $ git log --oneline -- foo.txt
-  #+END_SRC
+  - Git log
+    #+BEGIN_SRC sh
+    git log
+    git log --stat
+    git log -p
+    git log -1
+    git log --pretty=oneline
+    git log --pretty=format:"%h: %s - %ar" --graph
+    git log --oneline
+    git log --oneline --since=6.hours
+    git log --oneline -i --grep remove
+    git log --oneline -i -Shello
+    git log --oneline -- foo.txt
+    git log --oneline --all --graph
+    #+END_SRC
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
-  #+BEGIN_SRC sh
-  $ git remote add origin git@github.com:energos/sandbox.git
-  $ git remote -v
-  $ git remote show origin
-  $ git ls-remote
-  #+END_SRC
-** Fetch and Pull
-   - *git pull* = *git fetch* + *git merge*
-   #+BEGIN_SRC sh
-   $ git fetch <remote>
-   $ git fetch origin
-   #+END_SRC
-** Push
-   #+BEGIN_SRC sh
-   $ git push <remote> <branch>
-   $ git push origin master
-   #+END_SRC
-** Rename and Remove
-  #+BEGIN_SRC sh
-  $ git remote rename <remote-name> <remote-new-name>
-  $ git remote rm <remote-name>
-  #+END_SRC
+  - Add remote
+    #+BEGIN_SRC sh
+    git remote add origin git@github.com:energos/sandbox.git
+    #+END_SRC
+  - Show remotes
+    #+BEGIN_SRC sh
+    git remote -v
+    git remote show origin
+    git ls-remote
+    #+END_SRC
+  - Fetch and Pull
+    #+BEGIN_SRC sh
+    git fetch $remote
+    git fetch origin
+    #+END_SRC
+    *git pull* = *git fetch* + *git merge*
+  - Push
+    #+BEGIN_SRC sh
+    git push $remote $branch
+    git push origin master
+    #+END_SRC
+  - Rename and Remove
+    #+BEGIN_SRC sh
+    git remote rename $remote-name $remote-new-name
+    git remote rm $remote-name
+    #+END_SRC
 * Tags
   - [[https://git-scm.com/book/en/v2/Git-Basics-Tagging][Pro Git - Tagging]]
-  #+BEGIN_SRC sh
-  $ git tag                                     # list tags
-  $ git tag -l                                  # list tags
-  $ git tag -l <pattern>                        # list tags matching <pattern>
-  $ git tag <tagname>                           # create a lightweight tag
-  $ git tag -a <tagname>                        # create an annotated tag
-  $ git tag -a <tagname> -m "annotation"        # create an annotated tag
-  $ git tag -d <tagname>                        # delete tag
-  $ git tag <tagname> <commit>                  # tag a specific commit
-  $ git push <remote> <tagname>                 # push tag to remote server
-  $ git push <remote> --tags                    # push all tags to remote server
-  #+END_SRC
+  - Examples
+    #+BEGIN_SRC sh
+    git tag                                     # list tags
+    git tag -l                                  # list tags
+    git tag -l $pattern                         # list tags matching $pattern
+    git tag $tagname                            # create a lightweight tag
+    git tag -a $tagname                         # create an annotated tag
+    git tag -a $tagname -m "annotation"         # create an annotated tag
+    git tag -d $tagname                         # delete tag
+    git tag $tagname $commit                    # tag a specific commit
+    git push $remote $tagname                   # push tag to remote server
+    git push $remote --tags                     # push all tags to remote server
+    #+END_SRC
 * Aliases
   - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro Git - Git Aliases]]
-  #+BEGIN_SRC sh
-  $ git config alias.last 'log -1 HEAD'
-  #+END_SRC
+    #+BEGIN_SRC sh
+    git config alias.last 'log -1 HEAD'
+    #+END_SRC
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
   - Create new branch
-    : $ git branch testing
+    #+BEGIN_SRC sh
+    git branch testing
+    #+END_SRC
   - Switch to the new (or other existing) branch
-    : $ git checkout testing
+    #+BEGIN_SRC sh
+    git checkout testing
+    #+END_SRC
   - Create new branch and switch to it in one command
     This is equivalent to the 2 previous commands
-    : $ git checkout -b testing
+    #+BEGIN_SRC sh
+    git checkout -b testing
+    #+END_SRC
   - Edit some stuff and do a commit in the brand new branch
-    : $ git commit -a -m 'My brand new "testing" branch'
+    #+BEGIN_SRC sh
+    git commit -a -m 'My brand new "testing" branch'
+    #+END_SRC
   - Edit some stuff without commiting
   - Switch back to master branch
-    : git checkout master
+    #+BEGIN_SRC sh
+    git checkout master
+    #+END_SRC
     Cool! You will be warned if your tree is 'dirty':
     #+BEGIN_EXAMPLE
     error: Your local changes to the following files would be overwritten by checkout:
-	git.org
+    git.org
     Please commit your changes or stash them before you switch branches.
     Aborting
     #+END_EXAMPLE
   - So, let's commit it in "testing" before branching back to "master"
-    : $ git commit -a -m 'Add more stuff in "testing" branch'
+    #+BEGIN_SRC sh
+    git commit -a -m 'Add more stuff in "testing" branch'
+    #+END_SRC
   - Created a "testing" branch. Added some stuff to it.
   - Now back to "master" branch. Do some editing and then commit:
-    : $ git checkout master
+    #+BEGIN_SRC sh
+    git checkout master
+    #+END_SRC
     edit some stuff
-    : $ git commit -a -m 'Back to "master" again'
+    #+BEGIN_SRC sh
+    git commit -a -m 'Back to "master" again'
+    #+END_SRC
   - To get a nice log of all branches:
-    : $ git log --oneline --all --graph
+    #+BEGIN_SRC sh
+    git log --oneline --all --graph
+    #+END_SRC
   - Merge time baby
-    : $ git merge testing
+    #+BEGIN_SRC sh
+    git merge testing
+    #+END_SRC
   - Delete old branch (optional)
-    : $ git branch -d testing
+    #+BEGIN_SRC sh
+    git branch -d testing
+    #+END_SRC
   - List current branches
-    : $ git branch
-    : $ git branch -v
-    : $ git branch --merged
-    : $ git branch --no-merged
+    #+BEGIN_SRC sh
+    git branch
+    git branch -v
+    git branch --merged
+    git branch --no-merged
+    #+END_SRC
   - Remote branches
-    : $ git remote -v
-    : $ git remote show origin
-    : $ git ls-remote
+    #+BEGIN_SRC sh
+    git remote -v
+    git remote show origin
+    git ls-remote
+    #+END_SRC
   - Tracking branches
-    : $ git branch -vv
+    #+BEGIN_SRC sh
+    git branch -vv
+    #+END_SRC
   - Delete a remote branch
-    : $ git push remote_name --delete branch_name
+    #+BEGIN_SRC sh
+    git push remote_name --delete branch_name
+    #+END_SRC
   - Public branches
     Branches are not automatically pushed. You have to explicitly push the branch
     you want to share.
@@ -210,7 +262,7 @@
     #+END_EXAMPLE
     Let's edit a bit more, commit it and push it, to see what will happen.
     #+BEGIN_EXAMPLE
-     $ git branch -vv
+    $ git branch -vv
       master  0dbd592 [origin/master] Tracking branches
       private 3912216 Start a private branch
     * public  eebb246 Pushing a private branch
@@ -220,12 +272,14 @@
     that allows automatic pushing of tracking branches.
   - How to mark a branch as a tracking branch?
     #+BEGIN_EXAMPLE
-     $ git branch -vv
+    $ git branch -vv
       master  0dbd592 [origin/master] Tracking branches
       private 3912216 Start a private branch
     * public  eebb246 Pushing a private branch
     #+END_EXAMPLE
-    : $ git branch -u origin/public public
+    #+BEGIN_SRC sh
+    git branch -u origin/public public
+    #+END_SRC
     #+BEGIN_EXAMPLE
     $ git branch -vv
     * master  137285a [origin/master] How to define a tracking branch?
@@ -233,7 +287,9 @@
       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
     #+END_EXAMPLE
 * Multiple remote servers
-  : $ git remote add  git@gitlab.com:nononono/sandbox.git
+  #+BEGIN_SRC sh
+  git remote add  git@gitlab.com:nononono/sandbox.git
+  #+END_SRC
 * Git hosting servers
   - [[https://github.com/][GitHub]]
   - [[https://gitlab.com/][GitLab]]
@@ -242,12 +298,16 @@
   - [[https://gogs.io/][Gogs]]
   - Self hosted
 * Using meld as a diff tool
-  : $ git config diff.tool meld
-  : $ git config difftool.prompt false
+  #+BEGIN_SRC sh
+  git config diff.tool meld
+  git config difftool.prompt false
+  #+END_SRC
 * Using meld as a merge tool
   - [[http://meldmerge.org/help/resolving-conflicts.html][Meld - Resolving merge conflicts]]
   - [[https://www.youtube.com/watch?v=3Qynj8WUwgs&index=9&t=213s&list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial 9: Diff and Merge using meld]]
-  : $ git config merge.tool meld
-  : $ git config mergetool.keepBackup false
+  #+BEGIN_SRC sh
+  git config merge.tool meld
+  git config mergetool.keepBackup false
+  #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
