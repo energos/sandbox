@@ -242,6 +242,15 @@
     #+END_SRC
   - Tracking branches
     #+BEGIN_SRC sh
+    git checkout -b $branch $remote/$branch
+
+    # is equivalent to
+    git checkout --track $remote/$branch
+
+    # if local $branch doesn't exist and  matches a name on only one remote
+    # is equivalent to
+    git checkout $branch
+
     git branch -vv
     #+END_SRC
   - Delete a remote branch
@@ -296,9 +305,12 @@
       private 3912216 Start a private branch
       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
     #+END_EXAMPLE
+  - Rebasing
+    Merge creates a new commit pointing to the parent branches.
+    Rebase changes already existing commits. (is this true?)
 * Multiple remote servers
   #+BEGIN_SRC sh
-  git remote add  git@gitlab.com:nononono/sandbox.git
+  git remote add git@gitlab.com:nononono/sandbox.git
   #+END_SRC
 * Git hosting servers
   - [[https://github.com/][GitHub]]
