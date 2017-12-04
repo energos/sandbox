@@ -308,6 +308,10 @@
   - Rebasing \\
     Merge creates a new commit pointing to the parent branches.
     Rebase changes already existing commits. (is this true?)
+
+    This is the first commit in the 'experiment' branch,
+    branched from 'master' commit "7a722bb".
+
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add git@gitlab.com:nononono/sandbox.git
