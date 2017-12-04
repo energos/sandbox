@@ -305,8 +305,8 @@
       private 3912216 Start a private branch
       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
     #+END_EXAMPLE
-  - Rebasing
-    Merge creates a new commit pointing to the parent branches.
+  - Rebasing \
+    Merge creates a new commit pointing to the parent branches. \
     Rebase changes already existing commits. (is this true?)
 * Multiple remote servers
   #+BEGIN_SRC sh
