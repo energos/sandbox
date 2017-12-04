@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil num:nil html-postamble:nil
 #+STARTUP: showall
 
-A playground for childish games
+A playground for learning new things
 
 * [[file:emacs.org][emacs]]
 * [[file:git.org][git]]
