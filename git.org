@@ -312,6 +312,12 @@
     This is the first commit in the 'master' branch after branching
     the 'experiment' branch. The parent commit is "7a722bb".
 
+    This is the first commit in the 'experiment' branch,
+    branched from 'master' commit "7a722bb".
+
+    Merging the 'experiment' branch into the 'master' branch creates a new commit.
+    You are seeing the result of this merge.
+
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add git@gitlab.com:nononono/sandbox.git
