@@ -14,6 +14,7 @@
   - [[https://www.youtube.com/playlist?list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL_m-qmrTyRPxR01vXMeUuok4q1MgZvUZv][git commands - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx][Git Tutorials - YouTube]]
+  - [[https://www.youtube.com/watch?v=mtliRYQd0j4][Rewrite git history with Emacs, magit and git rebase - YouTube]]
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
@@ -305,9 +306,8 @@
       private 3912216 Start a private branch
       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
     #+END_EXAMPLE
-  - Rebasing \\
+  - Merging \\
     Merge creates a new commit pointing to the parent branches.
-    Rebase changes already existing commits. (is this true?)
 
     This is the first commit in the 'master' branch after branching
     the 'experiment' branch. The parent commit is "7a722bb".
@@ -317,7 +317,8 @@
 
     Merging the 'experiment' branch into the 'master' branch creates a new commit.
     You are seeing the result of this merge.
-
+  - Rebasing \\
+    Rebase changes already existing commits. (is this true?)
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add git@gitlab.com:nononono/sandbox.git
@@ -343,3 +344,4 @@
   #+END_SRC
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
+  - [[https://stackoverflow.com/questions/5097456/][Throw away local commits in git - Stack Overflow]]
