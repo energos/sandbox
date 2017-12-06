@@ -318,7 +318,9 @@
     Merging the 'experiment' branch into the 'master' branch creates a new commit.
     You are seeing the result of this merge.
   - Rebasing \\
-    Rebase changes already existing commits. (is this true?)
+    Rebase changes already existing commits.
+    Rebase changes history.
+    Rebase carefully!
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add git@gitlab.com:nononono/sandbox.git
