@@ -11,6 +11,7 @@
 * Tutorials
   - [[https://try.github.io/][Try Git]]
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
+  - [[http://hades.github.io/2010/01/git-your-friend-not-foe/][Git Is Your Friend not a Foe]]
   - [[https://www.youtube.com/playlist?list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL_m-qmrTyRPxR01vXMeUuok4q1MgZvUZv][git commands - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx][Git Tutorials - YouTube]]
@@ -18,6 +19,7 @@
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
+    [[https://wiki.gentoo.org/wiki/Git][git - Gentoo Wiki]]
     #+BEGIN_SRC sh
     emerge --ask --verbose dev-vcs/git          # as root user
     #+END_SRC
@@ -328,9 +330,12 @@
 * Git hosting servers
   - [[https://github.com/][GitHub]]
   - [[https://gitlab.com/][GitLab]]
+    + [[https://gitlabfan.com/][GitLab Fan Club]]
+    + [[https://scotch.io/tutorials/how-to-setup-gitlab-a-self-hosted-github][How to Setup GitLab: A Self Hosted GitHub]]
   - [[https://bitbucket.org/][Bitbucket]]
   - [[https://gitea.io/en-US/][Gitea]]
   - [[https://gogs.io/][Gogs]]
+  - [[http://gitolite.com/gitolite/][Gitolite]] + [[https://git.zx2c4.com/cgit/about/][cgit - A hyperfast web frontend for git repositories written in C]]
   - Self hosted
 * Using meld as a diff tool
   #+BEGIN_SRC sh
