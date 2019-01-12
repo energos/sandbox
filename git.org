@@ -10,12 +10,24 @@
   - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
 * Tutorials
   - [[https://try.github.io/][Try Git]]
+  - [[http://gitimmersion.com/index.html][Git Immersion]]
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
   - [[http://hades.github.io/2010/01/git-your-friend-not-foe/][Git Is Your Friend not a Foe]]
   - [[https://www.youtube.com/playlist?list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL_m-qmrTyRPxR01vXMeUuok4q1MgZvUZv][git commands - YouTube]]
   - [[https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx][Git Tutorials - YouTube]]
   - [[https://www.youtube.com/watch?v=mtliRYQd0j4][Rewrite git history with Emacs, magit and git rebase - YouTube]]
+  - [[https://www.lvguowei.me/post/magit-rebase/][Magit tutorial - Rebase (Part I)]] - [[https://www.lvguowei.me/post/magit-rebase-2/][(Part II)]]
+  - [[https://www.lvguowei.me/post/magit-tutorial-bisect/][Magit Tutorial - Bisecting]]
+  - [[https://medium.com/@fredrikmorken/why-you-should-stop-using-git-rebase-5552bee4fed1][Why you should stop using Git rebase – Fredrik V. Mørken]]
+  - [[https://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/][Don't Be Scared of git rebase | I care, I share, I'm Nathan LeClaire]]
+  - [[https://www.concrete.com.br/2017/09/04/git-para-corajosos-rebase-parte-1/][Concrete | Git para Corajosos – Rebase (Parte 1)]]
+  - [[https://www.concrete.com.br/2018/04/11/git-para-corajosos-rebaes-parte-2/][Concrete | Git para Corajosos – Rebase (Parte 2)]]
+  - [[https://www.concrete.com.br/2015/10/22/voce-nao-sabia-sobre-o-git/][Concrete | 9 coisas que você não sabia sobre o GIT]]
+  - [[https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/rebase][Rebase as an Alternative to Merge]]
+  - [[https://hackernoon.com/git-merge-vs-rebase-whats-the-diff-76413c117333][Git Merge vs. Rebase: What’s the Diff? – Hacker Noon]]
+  - [[https://hackernoon.com/tagged/git][Git – Hacker Noon]]
+  - [[https://www.sbf5.com/~cduan/technical/git/][Understanding Git Conceptually]]
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
@@ -29,6 +41,7 @@
   Oh, yeah, Magit ROCKS!
   - [[https://magit.vc/][It's Magit! A Git Porcelain inside Emacs]]
   - [[file:magit.org][Magit]]
+  - [[https://github.com/magit/magit/wiki/Cheatsheet][Cheatsheet · magit/magit Wiki · GitHub]]
 * Setting a GitHub repository
   - [[https://help.github.com/][GitHub Help]]
 * Create a new repository and export to GitHub
@@ -43,7 +56,7 @@
     git remote add origin git@github.com:energos/sandbox.git
     git add README.org
     git commit -m "Initial commit"
-    git push -u origin master
+    git push -u origin master  # -u == --set-upstream
     #+END_SRC
 * Working Tree / Staging Area / Repository
   - [[https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][Pro Git - Git Basics]]
@@ -125,7 +138,12 @@
     git log --oneline -i -Shello
     git log --oneline -- foo.txt
     git log --oneline --all --graph
+    git --no-pager log --oneline --all --graph
     #+END_SRC
+  - [[https://stackoverflow.com/questions/2183900/how-do-i-prevent-git-diff-from-using-a-pager][How do I prevent git diff from using a pager? - Stack Overflow]]
+  - [[https://git-scm.com/docs/pretty-formats][Git - pretty-formats Documentation]]
+  - [[https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs][git log - Pretty git branch graphs - Stack Overflow]]
+  - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
   - Add remote
@@ -239,6 +257,7 @@
     #+END_SRC
   - Remote branches
     #+BEGIN_SRC sh
+    git branch -r
     git remote -v
     git remote show origin
     git ls-remote
