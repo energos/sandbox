@@ -123,6 +123,7 @@
     #+END_SRC
 * Log
   - [[https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History][Pro Git - Viewing the Commit History]]
+  - man:git-log
   - Git log
     #+BEGIN_SRC sh
       git log
@@ -145,6 +146,7 @@
   - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
+  - man:git-remote
 ** Examples
    - Add remote
      #+BEGIN_SRC sh
@@ -174,6 +176,7 @@
      #+END_SRC
 * Tags
   - [[https://git-scm.com/book/en/v2/Git-Basics-Tagging][Pro Git - Tagging]]
+  - man:git-tag
 ** Examples
    #+BEGIN_SRC sh
      git tag                                 # list tags
@@ -194,6 +197,7 @@
     #+END_SRC
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
+  - man:git-branch
 ** Examples
    - Create new branch, named 'testing' in this example
      #+BEGIN_SRC sh
