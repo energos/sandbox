@@ -145,47 +145,48 @@
   - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
-  - Add remote
-    #+BEGIN_SRC sh
-      git remote add origin git@github.com:energos/sandbox.git
-    #+END_SRC
-  - Show remotes
-    #+BEGIN_SRC sh
-      git remote -v
-      git remote show origin
-      git ls-remote
-    #+END_SRC
-  - Fetch and Pull
-    #+BEGIN_SRC sh
-      git fetch $remote
-      git fetch origin
-      git pull origin                     # 'git pull' = 'git fetch' + 'git merge'
-    #+END_SRC
-  - Push
-    #+BEGIN_SRC sh
-      git push $remote $branch
-      git push origin master
-    #+END_SRC
-  - Rename and Remove
-    #+BEGIN_SRC sh
-      git remote rename $remote-name $remote-new-name
-      git remote rm $remote-name
-    #+END_SRC
+** Examples
+   - Add remote
+     #+BEGIN_SRC sh
+       git remote add origin git@github.com:energos/sandbox.git
+     #+END_SRC
+   - Show remotes
+     #+BEGIN_SRC sh
+       git remote -v
+       git remote show origin
+       git ls-remote
+     #+END_SRC
+   - Fetch and Pull
+     #+BEGIN_SRC sh
+       git fetch $remote
+       git fetch origin
+       git pull origin                     # 'git pull' = 'git fetch' + 'git merge'
+     #+END_SRC
+   - Push
+     #+BEGIN_SRC sh
+       git push $remote $branch
+       git push origin master
+     #+END_SRC
+   - Rename and Remove
+     #+BEGIN_SRC sh
+       git remote rename $remote-name $remote-new-name
+       git remote rm $remote-name
+     #+END_SRC
 * Tags
   - [[https://git-scm.com/book/en/v2/Git-Basics-Tagging][Pro Git - Tagging]]
-  - Examples
-    #+BEGIN_SRC sh
-      git tag                                 # list tags
-      git tag -l                              # list tags
-      git tag -l $pattern                     # list tags matching $pattern
-      git tag $tagname                        # create a lightweight tag
-      git tag -a $tagname                     # create an annotated tag
-      git tag -a $tagname -m "annotation"     # create an annotated tag
-      git tag -d $tagname                     # delete tag
-      git tag $tagname $commit                # tag a specific commit
-      git push $remote $tagname               # push tag to remote server
-      git push $remote --tags                 # push all tags to remote server
-    #+END_SRC
+** Examples
+   #+BEGIN_SRC sh
+     git tag                                 # list tags
+     git tag -l                              # list tags
+     git tag -l $pattern                     # list tags matching $pattern
+     git tag $tagname                        # create a lightweight tag
+     git tag -a $tagname                     # create an annotated tag
+     git tag -a $tagname -m "annotation"     # create an annotated tag
+     git tag -d $tagname                     # delete tag
+     git tag $tagname $commit                # tag a specific commit
+     git push $remote $tagname               # push tag to remote server
+     git push $remote --tags                 # push all tags to remote server
+   #+END_SRC
 * Aliases
   - [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Pro Git - Git Aliases]]
     #+BEGIN_SRC sh
