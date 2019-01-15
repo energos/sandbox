@@ -73,7 +73,6 @@
       |                               \               |
       |<-------------------------------+-<-- Pull ----|
     #+END_EXAMPLE
-
 * Command line help
   - [[https://git-scm.com/book/en/v2/Getting-Started-Getting-Help][Pro Git - Getting Help]]
   - Git help
@@ -194,154 +193,156 @@
     #+END_SRC
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
-  - Create new branch, named 'testing' in this example
-    #+BEGIN_SRC sh
-    git branch testing
-    #+END_SRC
-  - Switch to the new (or other existing) branch
-    #+BEGIN_SRC sh
-    git checkout testing
-    #+END_SRC
-  - Create new branch and switch to it in one command
-    This is equivalent to the 2 previous commands
-    #+BEGIN_SRC sh
-    git checkout -b testing
-    #+END_SRC
-  - Edit some stuff and do a commit in the brand new branch
-    #+BEGIN_SRC sh
-    git commit -a -m 'My brand new "testing" branch'
-    #+END_SRC
-  - Edit some stuff without commiting
-  - Switch back to master branch
-    #+BEGIN_SRC sh
-    git checkout master
-    #+END_SRC
-    Cool! You will be warned if your tree is 'dirty':
-    #+BEGIN_EXAMPLE
-    error: Your local changes to the following files would be overwritten by checkout:
-    git.org
-    Please commit your changes or stash them before you switch branches.
-    Aborting
-    #+END_EXAMPLE
-  - So, let's commit it in "testing" before branching back to "master"
-    #+BEGIN_SRC sh
-    git commit -a -m 'Add more stuff in "testing" branch'
-    #+END_SRC
-  - Created a "testing" branch. Added some stuff to it.
-  - Now back to "master" branch. Do some editing and then commit:
-    #+BEGIN_SRC sh
-    git checkout master
-    #+END_SRC
-    edit some stuff
-    #+BEGIN_SRC sh
-    git commit -a -m 'Back to "master" again'
-    #+END_SRC
-  - To get a nice log of all branches:
-    #+BEGIN_SRC sh
-    git log --oneline --all --graph
-    #+END_SRC
-  - Merge time baby
-    #+BEGIN_SRC sh
-    git merge testing
-    #+END_SRC
-  - Delete old branch (optional)
-    #+BEGIN_SRC sh
-    git branch -d testing
-    #+END_SRC
-  - List current branches
-    #+BEGIN_SRC sh
-    git branch
-    git branch -v
-    git branch --merged
-    git branch --no-merged
-    #+END_SRC
-  - Remote branches
-    #+BEGIN_SRC sh
-    git branch -r
-    git remote -v
-    git remote show origin
-    git ls-remote
-    #+END_SRC
-  - Tracking branches
-    #+BEGIN_SRC sh
-    git checkout -b $branch $remote/$branch
+** Examples
+   - Create new branch, named 'testing' in this example
+     #+BEGIN_SRC sh
+     git branch testing
+     #+END_SRC
+   - Switch to the new (or other existing) branch
+     #+BEGIN_SRC sh
+     git checkout testing
+     #+END_SRC
+   - Create new branch and switch to it in one command
+     This is equivalent to the 2 previous commands
+     #+BEGIN_SRC sh
+     git checkout -b testing
+     #+END_SRC
+   - Edit some stuff and do a commit in the brand new branch
+     #+BEGIN_SRC sh
+     git commit -a -m 'My brand new "testing" branch'
+     #+END_SRC
+   - Edit some stuff without commiting
+   - Switch back to master branch
+     #+BEGIN_SRC sh
+     git checkout master
+     #+END_SRC
+     Cool! You will be warned if your tree is 'dirty':
+     #+BEGIN_EXAMPLE
+     error: Your local changes to the following files would be overwritten by checkout:
+     git.org
+     Please commit your changes or stash them before you switch branches.
+     Aborting
+     #+END_EXAMPLE
+   - So, let's commit it in "testing" before branching back to "master"
+     #+BEGIN_SRC sh
+     git commit -a -m 'Add more stuff in "testing" branch'
+     #+END_SRC
+   - Created a "testing" branch. Added some stuff to it.
+   - Now back to "master" branch. Do some editing and then commit:
+     #+BEGIN_SRC sh
+     git checkout master
+     #+END_SRC
+     edit some stuff
+     #+BEGIN_SRC sh
+     git commit -a -m 'Back to "master" again'
+     #+END_SRC
+   - To get a nice log of all branches:
+     #+BEGIN_SRC sh
+     git log --oneline --all --graph
+     #+END_SRC
+   - Merge time baby
+     #+BEGIN_SRC sh
+     git merge testing
+     #+END_SRC
+   - Delete old branch (optional)
+     #+BEGIN_SRC sh
+     git branch -d testing
+     #+END_SRC
+   - List current branches
+     #+BEGIN_SRC sh
+     git branch
+     git branch -v
+     git branch -a
+     git branch --merged
+     git branch --no-merged
+     #+END_SRC
+   - Remote branches
+     #+BEGIN_SRC sh
+     git branch -r
+     git remote -v
+     git remote show origin
+     git ls-remote
+     #+END_SRC
+   - Tracking branches
+     #+BEGIN_SRC sh
+     git checkout -b $branch $remote/$branch
 
-    # is equivalent to
-    git checkout --track $remote/$branch
+     # is equivalent to
+     git checkout --track $remote/$branch
 
-    # if local $branch doesn't exist and  matches a name on only one remote
-    # is equivalent to
-    git checkout $branch
+     # if local $branch doesn't exist and  matches a name on only one remote
+     # is equivalent to
+     git checkout $branch
 
-    git branch -vv
-    #+END_SRC
-  - Delete a remote branch
-    #+BEGIN_SRC sh
-    git push $remote --delete $branch
-    #+END_SRC
-  - Rename a branch
-    #+BEGIN_SRC sh
-    git branch -m $old_name $new_name
-    #+END_SRC
-  - Rename a remote branch
-    #+BEGIN_SRC sh
-    git branch -m $old_name $new_name
-    git push $remote --delete $old_name
-    git push $remote $new_name
-    #+END_SRC
-  - Public branches
-    Branches are not automatically pushed. You have to explicitly push the branch
-    you want to share.
-    If you push the branch, it will be a public branch.
-    Yada yada yada, this is public talk. Enjoy the show.
-    For now this branch is still private.
-    #+BEGIN_EXAMPLE
-    $ git branch -vv
-      master  0dbd592 [origin/master] Tracking branches
-      private 3912216 Start a private branch
-    * public  a186c58 Start a public branch
-    #+END_EXAMPLE
-    Let's edit a bit more, commit it and push it, to see what will happen.
-    #+BEGIN_EXAMPLE
-    $ git branch -vv
-      master  0dbd592 [origin/master] Tracking branches
-      private 3912216 Start a private branch
-    * public  eebb246 Pushing a private branch
-    #+END_EXAMPLE
-    The branch was pushed but it is still not a tracking branch.
-    All branches needs to be explicitly pushed. There is a git config somewhere
-    that allows automatic pushing of tracking branches.
-  - How to mark a branch as a tracking branch?
-    #+BEGIN_EXAMPLE
-    $ git branch -vv
-      master  0dbd592 [origin/master] Tracking branches
-      private 3912216 Start a private branch
-    * public  eebb246 Pushing a private branch
-    #+END_EXAMPLE
-    #+BEGIN_SRC sh
-    git branch -u origin/public public
-    #+END_SRC
-    #+BEGIN_EXAMPLE
-    $ git branch -vv
-    * master  137285a [origin/master] How to define a tracking branch?
-      private 3912216 Start a private branch
-      public  e3c9338 [origin/public: ahead 2] Pushing a public branch
-    #+END_EXAMPLE
-  - Merging \\
-    Merge creates a new commit pointing to the parent branches.
+     git branch -vv
+     #+END_SRC
+   - Delete a remote branch
+     #+BEGIN_SRC sh
+     git push $remote --delete $branch
+     #+END_SRC
+   - Rename a branch
+     #+BEGIN_SRC sh
+     git branch -m $old_name $new_name
+     #+END_SRC
+   - Rename a remote branch
+     #+BEGIN_SRC sh
+     git branch -m $old_name $new_name
+     git push $remote --delete $old_name
+     git push $remote $new_name
+     #+END_SRC
+   - Public branches
+     Branches are not automatically pushed. You have to explicitly push the branch
+     you want to share.
+     If you push the branch, it will be a public branch.
+     Yada yada yada, this is public talk. Enjoy the show.
+     For now this branch is still private.
+     #+BEGIN_EXAMPLE
+     $ git branch -vv
+       master  0dbd592 [origin/master] Tracking branches
+       private 3912216 Start a private branch
+     * public  a186c58 Start a public branch
+     #+END_EXAMPLE
+     Let's edit a bit more, commit it and push it, to see what will happen.
+     #+BEGIN_EXAMPLE
+     $ git branch -vv
+       master  0dbd592 [origin/master] Tracking branches
+       private 3912216 Start a private branch
+     * public  eebb246 Pushing a private branch
+     #+END_EXAMPLE
+     The branch was pushed but it is still not a tracking branch.
+     All branches needs to be explicitly pushed. There is a git config somewhere
+     that allows automatic pushing of tracking branches.
+   - How to mark a branch as a tracking branch?
+     #+BEGIN_EXAMPLE
+     $ git branch -vv
+       master  0dbd592 [origin/master] Tracking branches
+       private 3912216 Start a private branch
+     * public  eebb246 Pushing a private branch
+     #+END_EXAMPLE
+     #+BEGIN_SRC sh
+     git branch -u origin/public public
+     #+END_SRC
+     #+BEGIN_EXAMPLE
+     $ git branch -vv
+     * master  137285a [origin/master] How to define a tracking branch?
+       private 3912216 Start a private branch
+       public  e3c9338 [origin/public: ahead 2] Pushing a public branch
+     #+END_EXAMPLE
+   - Merging \\
+     Merge creates a new commit pointing to the parent branches.
 
-    This is the first commit in the 'master' branch after branching
-    the 'experiment' branch. The parent commit is "7a722bb".
+     This is the first commit in the 'master' branch after branching
+     the 'experiment' branch. The parent commit is "7a722bb".
 
-    This is the first commit in the 'experiment' branch,
-    branched from 'master' commit "7a722bb".
+     This is the first commit in the 'experiment' branch,
+     branched from 'master' commit "7a722bb".
 
-    Merging the 'experiment' branch into the 'master' branch creates a new commit.
-    You are seeing the result of this merge.
-  - Rebasing \\
-    Rebase changes already existing commits.
-    Rebase changes history.
-    Rebase carefully!
+     Merging the 'experiment' branch into the 'master' branch creates a new commit.
+     You are seeing the result of this merge.
+   - Rebasing \\
+     Rebase changes already existing commits.
+     Rebase changes history.
+     Rebase carefully!
 * Multiple remote servers
   #+BEGIN_SRC sh
   git remote add git@gitlab.com:nononono/sandbox.git
