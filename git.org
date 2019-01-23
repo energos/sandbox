@@ -1,4 +1,4 @@
-#+TITLE:   git
+#+TITLE: Energos's Anarchic Git Notes
 #+AUTHOR: energos
 #+OPTIONS: toc:nil num:nil html-postamble:nil
 #+STARTUP: showall
@@ -6,11 +6,12 @@
 * Where to start
   - [[https://git-scm.com/][git home page]]
   - [[https://www.quora.com/What-is-git-and-why-should-I-use-it][What is git and why should I use it? - Quora]]
-  - [[https://git-scm.com/book/en/v2][Pro Git]] book
-  - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book
+  - [[https://git-scm.com/book/en/v2][Pro Git]] book [[https://github.com/progit/progit2/releases/download/2.1.106/progit.pdf][(pdf)]]
+  - [[https://github.com/pluralsight/git-internals-pdf][Git Internals]] book [[http://opcode.org/peepcode-git.pdf][(pdf)]]
 * Tutorials
   - [[https://try.github.io/][Try Git]]
   - [[http://gitimmersion.com/index.html][Git Immersion]]
+  - [[http://rogerdudler.github.io/git-guide/][git - the simple guide - no deep shit!]]
   - [[https://githowto.com/][GitHowTo: Guided Git Tutorial]]
   - [[http://hades.github.io/2010/01/git-your-friend-not-foe/][Git Is Your Friend not a Foe]]
   - [[https://www.youtube.com/playlist?list=PLeo1K3hjS3usJuxZZUBdjAcilgfQHkRzW][Git/Github Tutorial - YouTube]]
@@ -28,6 +29,14 @@
   - [[https://hackernoon.com/git-merge-vs-rebase-whats-the-diff-76413c117333][Git Merge vs. Rebase: What’s the Diff? – Hacker Noon]]
   - [[https://hackernoon.com/tagged/git][Git – Hacker Noon]]
   - [[https://www.sbf5.com/~cduan/technical/git/][Understanding Git Conceptually]]
+  - [[http://teohm.com/blog/learning-git-internals-by-example/][Learning Git Internals by Example - teohm]]
+  - [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=2ahUKEwiR1KCA9L7fAhVDH5AKHaneAsMQwqsBMAJ6BAgCEAQ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DP6jD966jzlk&usg=AOvVaw3GlViL1GUJabPMblAI5l6L][YouTube: Git Internals - How Git Works - Fear Not The SHA!]]
+  - [[https://medium.com/@pawan_rawal/demystifying-git-internals-a004f0425a70][Medium: Demystifying Git internals – Pawan Rawal]]
+  - [[https://blog.angularindepth.com/become-a-git-pro-by-learning-git-architecture-in-15-minutes-9c995db6faeb][Become a GIT pro by learning GIT architecture in 15 minutes]]
+  - [[https://itnext.io/become-a-git-pro-in-just-one-blog-a-thorough-guide-to-git-architecture-and-command-line-interface-93fbe9bdb395][Become a Git pro in just one blog. A thorough guide to Git architecture and command line interface]]
+  - [[https://news.ycombinator.com/item?id=16586811][Key Git Concepts Explained the Hard Way | Hacker News]]
+  - [[https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud][Learn Git with Bitbucket Cloud]]
+  - [[http://eagain.net/articles/git-for-computer-scientists/][Git for Computer Scientists]]
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
@@ -140,10 +149,68 @@
       git log --oneline --all --graph
       git --no-pager log --oneline --all --graph
     #+END_SRC
-  - [[https://stackoverflow.com/questions/2183900/how-do-i-prevent-git-diff-from-using-a-pager][How do I prevent git diff from using a pager? - Stack Overflow]]
-  - [[https://git-scm.com/docs/pretty-formats][Git - pretty-formats Documentation]]
-  - [[https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs][git log - Pretty git branch graphs - Stack Overflow]]
-  - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
+** A bunch of unsorted links
+   - [[https://stackoverflow.com/questions/2183900/how-do-i-prevent-git-diff-from-using-a-pager][How do I prevent git diff from using a pager? - Stack Overflow]]
+   - [[https://git-scm.com/docs/pretty-formats][Git - pretty-formats Documentation]]
+   - [[https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs][git log - Pretty git branch graphs - Stack Overflow]]
+   - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
+   - [[https://stackoverflow.com/questions/30551818/git-pretty-format-string-equivalent-of-oneline-including-colors][Git pretty format string equivalent of oneline, including colors - Stack Overflow]]
+   - [[http://sweetme.at/2013/09/13/git-logs-with-color/][Git Logs with Color and Graphs - Sweetmeat]]
+   - [[https://dev.to/drews256/i-love-git-log-off][I love git log - DEV Community]]
+   - [[https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs][git log - Pretty git branch graphs - Stack Overflow]]
+   - [[https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298][Visualizing branch topology in git - Stack Overflow]]
+   - [[https://coderwall.com/p/1ixwdw/nice-compact-and-colorized-git-log][Nice compact and colorized git log (Example)]]
+   - [[https://coderwall.com/p/euwpig/a-better-git-log][A better git log (Example)]]
+** Pretty formats
+   [[man:git-log#PRETTY%20FORMATS][Pretty Formats section on git-log man page]]
+   - oneline
+   - short
+   - medium (default)
+   - full
+   - email
+   - raw
+   - format:<string> or tformat:<string>
+     + %H: commit hash
+     + %h: abbreviated commit hash
+     + %T: tree hash
+     + %t: abbreviated tree hash
+     + %P: parent hashes
+     + %p: abbreviated parent hashes
+     + %an (%aN): author name
+     + %ae (%aE): author email
+     + %ad (%aD): author date
+     + %ar: author date, relative
+     + %at: author date, UNIX timestamp
+     + %ai (%aI): author date, ISO 8601 format
+     + %cn (%cN): commiter name
+     + %ce (%cE): commiter email
+     + %cd (%cD): commiter date
+     + %cr: commiter date, relative
+     + %ct: commiter date, UNIX timestamp
+     + %ci (%cI): commiter date, ISO 8601 format
+     + %d (%D): ref names
+     + %e: encoding ???
+     + %s: subjetc
+     + %f: sanitized subject line, suitable for a filename
+     + %b: (%B): body
+     + %N: commit notes
+     + %GG: %G?: %GS: %GK: %gD: %gd: %gn: %gN: %ge: %gE: %gs: postponed...
+     + %Cred: %Cgreen: %Cblue: %Creset: change colors
+     + %C(...): color specification, see [[man:git-config#CONFIGURATION%20FILE][git-config manpage: Configuration File]]
+     + %m: left (<), right (>) or boundary (-) mark postponed...
+     + %n: newline
+     + %%: a raw %
+     + %x00: print hex byte
+     + %w([<w>[,<i1>[,<i2>]]]): postponed...
+     + %<(<N>[,trunc|ltrunc|mtrunc]): postponed...
+     + %<|(<N>): postponed...
+     + %>(<N>) %>|(<N>): postponed...
+     + %>>(<N>) %>>|(<N>): postponed...
+     + %><(<N>) %><|(<N>): postponed...
+     + %(trailers[:options]): postponed...
+** My own take on a pretty log
+   : git log --graph --pretty=tformat:'%C(auto)%h%d %s %C(cyan)(%ar)%C(reset)'
+   : git log --graph --pretty=tformat:'%C(auto)%h%d %s %C(cyan)(%ar)%C(reset) %C(bold blue)%an%C(reset)'
 * Remotes
   - [[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes][Pro Git - Working with Remotes]]
   - man:git-remote
@@ -198,6 +265,18 @@
 * Branches
   - [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Pro Git - Branching]]
   - man:git-branch
+** Branching
+  : git checkout -b <branch>
+  or
+  : git branch <branch>
+  : git checkout <branch>
+** Track a remote branch
+  [[http://gitimmersion.com/lab_45.html][Lab 45: Adding a tracking Branch - Git Immersion]]
+  : git branch --track <branch> origin/<branch>
+  [[http://gitimmersion.com/lab_47.html][Lab 47 - Git Immersion]]
+  : git remote add shared ../hello.git
+  'shared' é o name dado ao remote. Poderia ser qualquer coisa.
+
 ** Examples
    - Create new branch, named 'testing' in this example
      #+BEGIN_SRC sh
@@ -348,10 +427,30 @@
      Rebase changes already existing commits.
      Rebase changes history.
      Rebase carefully!
+* Reset
+  - [[https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified][Git - Reset Demystified]]
+  - git reset --soft            - não toca na árvore nem no cache (index)
+  - git reset --mixed (default) - modifica o cache (index)
+  - git reset --hard (danger!)  - modifica árvore e cache (index)
+** Unstage a file
+   : git reset HEAD <a_file>
+** Remove last commit
+   : git reset --hard HEAD~
+** Revert last commit
+   : git revert HEAD
 * Multiple remote servers
   #+BEGIN_SRC sh
     git remote add git@gitlab.com:nononono/sandbox.git
   #+END_SRC
+* Moving files
+  : mkdir <new_dir>
+  : git mv <some_file> <new_dir>
+  or
+  : mkdir <new_dir>
+  : mv <some_file> <new_dir>
+  : git add <new_dir>/<some_file>
+  : git rm <some_file>
+
 * Git hosting servers
   - [[https://github.com/][GitHub]]
   - [[https://gitlab.com/][GitLab]]
@@ -374,8 +473,9 @@
     git config merge.tool meld
     git config mergetool.keepBackup false
   #+END_SRC
-* How to force push
+* Force push
   - [[https://estl.tech/a-gentler-force-push-on-git-force-with-lease-fb15701218df][A gentler force push on git: Force-with-lease – Engineering Tomorrow’s Systems]]
+  - [[https://evilmartians.com/chronicles/git-push---force-and-how-to-deal-with-it][git push --force and how to deal with it — Martian Chronicles]] 
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
   - [[https://stackoverflow.com/questions/5097456/][Throw away local commits in git - Stack Overflow]]
