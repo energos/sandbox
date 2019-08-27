@@ -37,6 +37,8 @@
   - [[https://news.ycombinator.com/item?id=16586811][Key Git Concepts Explained the Hard Way | Hacker News]]
   - [[https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud][Learn Git with Bitbucket Cloud]]
   - [[http://eagain.net/articles/git-for-computer-scientists/][Git for Computer Scientists]]
+  - [[https://www.youtube.com/playlist?list=PL2rC-8e38bUXloBOYChAl0EcbbuVjbE3t][#Commitmas - YouTube]]
+  - [[https://www.youtube.com/results?search_query=git+worktree][git worktree - YouTube]]
 * Installing git
   - [[https://git-scm.com/downloads][Git - Downloads]]
   - With your favorite package manager
@@ -479,3 +481,6 @@
 * Unsorted notes
   - [[https://github.com/github/gitignore][GitHub - A collection of useful .gitignore templates]]
   - [[https://stackoverflow.com/questions/5097456/][Throw away local commits in git - Stack Overflow]]
+* Multiple worktrees
+  - [[https://git-scm.com/docs/git-worktree][Git - git-worktree Documentation]]
+  - [[https://www.saltycrane.com/blog/2017/05/git-worktree-notes/][git worktree notes - SaltyCrane Blog]]
