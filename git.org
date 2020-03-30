@@ -484,3 +484,5 @@
 * Multiple worktrees
   - [[https://git-scm.com/docs/git-worktree][Git - git-worktree Documentation]]
   - [[https://www.saltycrane.com/blog/2017/05/git-worktree-notes/][git worktree notes - SaltyCrane Blog]]
+* Bare Repositories
+  : git clone --mirror git@github.com:energos/sandbox.git
