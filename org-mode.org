@@ -3,3 +3,58 @@
 #+STARTUP: showall
 
 * Org-mode ROCKS!
+  - [[https://orgmode.org/][Org mode for Emacs]]
+  - [[https://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html][Emacs org-mode examples and cookbook]]
+
+* Org-babel
+  - [[https://orgmode.org/worg/org-contrib/babel/][Babel: active code in Org-mode]]
+  - [[https://github.com/dfeich/org-babel-examples][dfeich/org-babel-examples: Examples using emacs org mode babel]]
+
+** Scheme
+   #+begin_src scheme
+     (* 1 2 3 4 5 6)
+   #+end_src
+
+   #+RESULTS:
+   : 720
+
+** Emacs Lisp
+   #+begin_src elisp
+     (* 1 2 3 4 5 6)
+   #+end_src
+
+   #+RESULTS:
+   : 720
+
+** Forth
+   #+begin_src forth
+     1 2 3 4 5 6 * * * * * .
+   #+end_src
+
+   #+RESULTS:
+   : 720
+
+** Bash
+   #+begin_src bash
+     echo "Org-mode Rocks!"
+   #+end_src
+
+   #+RESULTS:
+   : Org-mode Rocks!
+
+** Ruby
+   #+begin_src ruby
+     require 'date'
+     $av = "Avaliado em #{Date.today}"
+   #+end_src
+
+   #+RESULTS:
+   : Avaliado em 2021-02-23
+
+** C
+   #+begin_src C :includes <stdio.h>
+     printf("Hello World!\n");
+   #+end_src
+
+   #+RESULTS:
+   : Hello World!
